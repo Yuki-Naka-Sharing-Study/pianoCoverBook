@@ -26,6 +26,7 @@
     <EditText
         android:id="@+id/name_of_artist_edit_text"
         android:hint="リスト"
+        android:background="@drawable/edittext_border"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,6 +48,7 @@
     <EditText
         android:id="@+id/name_of_song_edit_text"
         android:hint="ラ・カンパネラ"
+        android:background="@drawable/edittext_border"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/name_of_artist_edit_text"
@@ -68,6 +70,7 @@
     <EditText
         android:id="@+id/memo_edit_text"
         android:hint="アルペジオが弾けない。"
+        android:background="@drawable/edittext_border"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/name_of_song_edit_text"
