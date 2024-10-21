@@ -12,6 +12,14 @@
 
 　　<!-- guideline使ってズレを直すのもあり   -->
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintGuide_percent="0.35"
+        />
+
     <TextView
         android:id="@+id/name_of_artist_text_view"
         android:text="アーティスト名"
