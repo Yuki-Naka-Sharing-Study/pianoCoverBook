@@ -3,162 +3,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     tools:context=".MainActivity"
     >
 
-　　<!-- guideline使ってズレを直すのもあり   -->
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vertical_guideline"
-        android:orientation="vertical"
-        android:layout_width="0dp"
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintGuide_percent="0.3"
-        />
-
-    <TextView
-        android:id="@+id/name_of_artist_text_view"
-        android:text="アーティスト名"
-        android:textSize="16sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginBottom="?attr/actionBarSize"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        />
-
-    <EditText
-        android:id="@+id/name_of_artist_edit_text"
-        android:hint="リスト"
-        android:background="@drawable/edittext_border"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        />
-
-    <TextView
-        android:id="@+id/name_of_song_text_view"
-        android:text="曲名"
-        android:textSize="16sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/name_of_artist_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        />
-
-    <EditText
-        android:id="@+id/name_of_song_edit_text"
-        android:hint="ラ・カンパネラ"
-        android:background="@drawable/edittext_border"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/name_of_artist_edit_text"
-        app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        />
-
-    <TextView
-        android:id="@+id/memo_text_view"
-        android:text="メモ"
-        android:textSize="16sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/name_of_song_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        />
-
-    <EditText
-        android:id="@+id/memo_edit_text"
-        android:hint="アルペジオが弾けない。"
-        android:background="@drawable/edittext_border"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/name_of_song_edit_text"
-        app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        />
-
-    <TextView
-        android:id="@+id/right_text_view"
-        android:text="右手の習熟度"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/right_number_text_view"
-        tools:text="100"
-        android:textSize="36sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/right_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <SeekBar
-        android:id="@+id/right_number_seekbar"
-        android:progress="50"
-        android:max="100"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/right_number_text_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        />
-
-    <TextView
-        android:id="@+id/left_text_view"
-        android:text="左手の習熟度"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/right_number_seekbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/left_number_text_view"
-        tools:text="100"
-        android:textSize="36sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/left_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <SeekBar
-        android:id="@+id/left_number_seekbar"
-        android:progress="50"
-        android:max="100"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/left_number_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
