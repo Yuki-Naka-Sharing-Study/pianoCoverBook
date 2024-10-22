@@ -3,13 +3,17 @@
     <item
         android:id="@+id/confirmFragment"
         android:title="記録確認"
+        android:icon="@drawable/search"
         />
     <item
         android:id="@+id/recordFragment"
         android:title="記録する"
+        android:icon="@drawable/record"
+
         />
     <item
         android:id="@+id/settingFragment"
         android:title="設定"
+        android:icon="@drawable/setting"
         />
 </menu>
