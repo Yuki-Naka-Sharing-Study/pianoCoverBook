@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/confirmFragment"
+    >
+
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.example.piano_cover_book.ConfirmFragment"
+        android:label="fragment_confirm"
+        tools:layout="@layout/fragment_confirm"
+        >
+        <action
+            android:id="@+id/action_confirmFragment_to_recordFragment"
+            app:destination="@id/recordFragment"
+            />
+        <action
+            android:id="@+id/action_confirmFragment_to_settingFragment"
+            app:destination="@id/settingFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="com.example.piano_cover_book.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record"
+        >
+        <action
+            android:id="@+id/action_recordFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment"
+            />
+        <action
+            android:id="@+id/action_recordFragment_to_settingFragment"
+            app:destination="@id/settingFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.piano_cover_book.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting"
+        >
+        <action
+            android:id="@+id/action_settingFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment"
+            />
+        <action
+            android:id="@+id/action_settingFragment_to_recordFragment"
+            app:destination="@id/recordFragment"
+            />
+    </fragment>
 
 </navigation>
